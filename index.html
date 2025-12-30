@@ -18,6 +18,13 @@
           <li><a href="#home" class="hover:text-blue-600">Home</a></li>
           <li><a href="#packages" class="hover:text-blue-600">Packages</a></li>
           <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+          <li id="userLink">
+            <a
+              href="auth.html"
+              class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+              >Login</a
+            >
+          </li>
         </ul>
       </div>
     </nav>
@@ -47,11 +54,59 @@
       </div>
     </header>
 
+    <section id="tickets" class="max-w-7xl mx-auto px-4 -mt-16 relative z-20">
+      <div
+        class="bg-white p-6 md:p-10 rounded-2xl shadow-2xl border border-gray-100"
+      >
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">
+          Book Your Trip Now
+        </h2>
+        <form id="bookingForm" class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div class="space-y-2">
+            <label class="text-sm font-bold text-gray-600">FROM</label>
+            <input
+              type="text"
+              id="fromCity"
+              placeholder="e.g. Dhaka"
+              class="w-full p-3 bg-gray-50 border rounded-xl outline-none"
+              required
+            />
+          </div>
+          <div class="space-y-2">
+            <label class="text-sm font-bold text-gray-600">TO</label>
+            <input
+              type="text"
+              id="toCity"
+              placeholder="e.g. Cox's Bazar"
+              class="w-full p-3 bg-gray-50 border rounded-xl outline-none"
+              required
+            />
+          </div>
+          <div class="space-y-2">
+            <label class="text-sm font-bold text-gray-600">DATE</label>
+            <input
+              type="date"
+              id="travelDate"
+              class="w-full p-3 bg-gray-50 border rounded-xl outline-none"
+              required
+            />
+          </div>
+          <div class="flex flex-col justify-end">
+            <button
+              type="submit"
+              class="bg-blue-600 text-white font-bold py-3.5 rounded-xl hover:bg-blue-700 transition shadow-lg"
+            >
+              Confirm Booking
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
     <section id="packages" class="max-w-7xl mx-auto px-4 py-20">
       <h2 class="text-3xl font-bold text-center mb-12">
         Featured Tour Packages
       </h2>
-
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
           <img
@@ -67,7 +122,7 @@
             <div class="flex justify-between items-center">
               <span class="text-blue-600 font-bold">3 Days </span>
               <button
-                onclick="openModal('Cox\'s Bazar', 'Enjoy the serene beauty of the Bay of Bengal with 3 days of relaxation.', '3 Days ', 'Couple Package: 5000 tk')"
+                onclick="openModal('Cox\'s Bazar', 'Enjoy the serene beauty of the Bay of Bengal.', '3 Days', '5,000 tk')"
                 class="text-sm border border-blue-600 text-blue-600 px-4 py-2 rounded hover:bg-blue-600 hover:text-white"
               >
                 View Details
@@ -75,7 +130,6 @@
             </div>
           </div>
         </div>
-
         <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
           <img
             src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/Burj_Khalifa_2021.jpg/1200px-Burj_Khalifa_2021.jpg"
@@ -88,9 +142,9 @@
               Explore the city of gold and modern wonders.
             </p>
             <div class="flex justify-between items-center">
-              <span class="text-blue-600 font-bold">5 Days </span>
+              <span class="text-blue-600 font-bold">5 Days</span>
               <button
-                onclick="openModal('Dubai Luxury', 'Stay in 5-star hotels and explore the Burj Khalifa and Desert Safari.', '5 Days ', 'Premium Package : 400,000 tk')"
+                onclick="openModal('Dubai Luxury', 'Stay in 5-star hotels and explore Burj Khalifa.', '5 Days', '400,000 tk')"
                 class="text-sm border border-blue-600 text-blue-600 px-4 py-2 rounded hover:bg-blue-600 hover:text-white"
               >
                 View Details
@@ -98,7 +152,6 @@
             </div>
           </div>
         </div>
-
         <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
           <img
             src="https://internationalliving.com/_next/image/?url=https%3A%2F%2Fimages.ctfassets.net%2Fwv75stsetqy3%2FDaKdXY2tkQGWeVQiCbSx7%2Fac01166282697e4e0cafb99180d35cd1%2FThailand_Featured.jpg%3Fq%3D60%26fit%3Dfill%26fm%3Dwebp&w=3840&q=60"
@@ -113,7 +166,7 @@
             <div class="flex justify-between items-center">
               <span class="text-blue-600 font-bold">4 Days </span>
               <button
-                onclick="openModal('Thailand Budget', 'A 4-day trip covering Bangkok and Pattaya with local tours.', '4 Days ', 'Budget Package : 80,000 tk')"
+                onclick="openModal('Thailand Budget', 'A 4-day trip covering Bangkok and Pattaya.', '4 Days', '80,000 tk')"
                 class="text-sm border border-blue-600 text-blue-600 px-4 py-2 rounded hover:bg-blue-600 hover:text-white"
               >
                 View Details
@@ -124,39 +177,65 @@
       </div>
     </section>
 
+    <section class="py-10">
+      <h2 class="text-3xl font-bold text-center mb-12">
+        Why Choose TravelEase?
+      </h2>
+      <div
+        class="flex flex-col md:flex-row gap-8 justify-between items-center max-w-7xl mx-auto px-4 mb-8"
+      >
+        <img
+          class="rounded-xl md:w-1/2"
+          src="https://media.istockphoto.com/id/1850391734/photo/group-of-middle-aged-friends-posing-for-the-camera-happily-celebrating-their-holidays.jpg?s=612x612&w=0&k=20&c=2mazVAYSz39fURp55A4LjsOOPidV2vVLt2ycu0sueb0="
+          alt="Happy Group"
+        />
+        <ul
+          class="md:w-1/2 text-xl space-y-4 text-gray-600 list-disc list-inside"
+        >
+          <li>Customized travel packages to suit your needs. [cite: 19, 22]</li>
+          <li>Competitive pricing with no hidden costs. [cite: 20]</li>
+          <li>24/7 customer support during your trip. [cite: 67]</li>
+          <li>Expert consultants for personalized service.</li>
+        </ul>
+      </div>
+    </section>
+
     <section id="contact" class="bg-gray-100 py-20 px-4">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
           Contact Us & Inquiry
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
-            <h3 class="text-xl font-semibold mb-4">Agency Details</h3>
-            <p class="mb-2">
+            <h3 class="text-xl font-semibold mb-4 text-blue-600">
+              Agency Details
+            </h3>
+            <p class="mb-2 text-gray-700">
               <strong>Address:</strong> 123 Travel Street, City Center
             </p>
-            <p class="mb-2"><strong>Phone:</strong> +880 1234 567890</p>
-            <p class="mb-6"><strong>Email:</strong> info@travelease.com</p>
-            <p class="text-gray-600 text-sm">
-              Targeting Families, Corporate, and Solo travelers .
+            <p class="mb-2 text-gray-700">
+              <strong>Phone:</strong> +880 1234 567890
+            </p>
+            <p class="mb-6 text-gray-700">
+              <strong>Email:</strong> info@travelease.com
             </p>
           </div>
           <form id="inquiryForm" class="space-y-4">
             <input
               type="text"
               placeholder="Your Name"
-              class="w-full p-3 rounded border focus:outline-blue-500"
+              class="w-full p-3 rounded border outline-none"
               required
             />
             <input
               type="email"
-              placeholder="Email Address"
-              class="w-full p-3 rounded border focus:outline-blue-500"
+              placeholder="Email"
+              class="w-full p-3 rounded border outline-none"
               required
             />
             <textarea
-              placeholder="Tell us about your trip inquiry..."
-              class="w-full p-3 rounded border h-32 focus:outline-blue-500"
+              placeholder="Trip Inquiry Details..."
+              class="w-full p-3 rounded border h-32 outline-none"
               required
             ></textarea>
             <button
@@ -169,17 +248,6 @@
       </div>
     </section>
 
-    <footer class="bg-gray-900 text-white py-10 text-center">
-      <div class="max-w-7xl mx-auto px-4">
-        <p class="mb-4">© 2025 TravelEase Agency.</p>
-        <div class="flex justify-center space-x-6 text-gray-400">
-          <a>Facebook</a>
-          <a>Instagram</a>
-          <a>Twitter</a>
-        </div>
-      </div>
-    </footer>
-
     <div
       id="modal"
       class="fixed inset-0 bg-black/60 hidden z-[100] flex items-center justify-center p-4"
@@ -188,17 +256,47 @@
         <button onclick="closeModal()" class="absolute top-4 right-4 text-2xl">
           &times;
         </button>
-        <h2 id="modalTitle" class="text-2xl font-bold mb-4"></h2>
+        <h2 id="modalTitle" class="text-2xl font-bold mb-4 text-blue-600"></h2>
         <p id="modalBody" class="text-gray-600 mb-6"></p>
-        <div class="flex justify-between border-t pt-4">
+        <div class="flex justify-between border-t pt-4 mb-6">
           <span id="modalDuration" class="font-bold"></span>
           <span id="modalPrice" class="text-blue-600 font-bold"></span>
         </div>
+        <button
+          onclick="confirmBookingFromModal()"
+          class="w-full bg-green-600 text-white py-3 rounded-lg font-bold hover:bg-green-700 transition"
+        >
+          Book This Package
+        </button>
       </div>
     </div>
 
+    <footer class="bg-gray-900 text-white py-10 text-center">
+      <p class="mb-4">© 2025 TravelEase Agency.</p>
+      <p>
+        Follow us on <a href="#" class="text-blue-400 underline">Facebook</a>,
+        <a href="#" class="text-blue-400 underline">Twitter</a>, and
+        <a href="#" class="text-blue-400 underline">Instagram</a>
+      </p>
+    </footer>
+
     <script>
-      // Modal Logic [cite: 24]
+      // Auth State Mock
+      const user = localStorage.getItem("userEmail");
+      if (user) {
+        document.getElementById(
+          "userLink"
+        ).innerHTML = `<span class="text-blue-600 font-bold">Hello, ${
+          user.split("@")[0]
+        }</span> <button onclick="logout()" class="ml-4 text-red-500 underline text-sm">Logout</button>`;
+      }
+
+      function logout() {
+        localStorage.removeItem("userEmail");
+        window.location.reload();
+      }
+
+      // Modal [cite: 24]
       function openModal(title, body, duration, price) {
         document.getElementById("modalTitle").innerText = title;
         document.getElementById("modalBody").innerText = body;
@@ -211,10 +309,28 @@
         document.getElementById("modal").classList.add("hidden");
       }
 
-      // Form Validation [cite: 38]
+      // Booking Functionality
+      document.getElementById("bookingForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const from = document.getElementById("fromCity").value;
+        const to = document.getElementById("toCity").value;
+        alert(
+          `Booking Confirmed!\nRoute: ${from} to ${to}\nWe will send the details to your email.`
+        );
+      });
+
+      function confirmBookingFromModal() {
+        const pkg = document.getElementById("modalTitle").innerText;
+        alert(
+          `Success!\nYou have booked the ${pkg}. Our consultant will contact you shortly.`
+        );
+        closeModal();
+      }
+
+      // Inquiry [cite: 38]
       document.getElementById("inquiryForm").addEventListener("submit", (e) => {
         e.preventDefault();
-        alert("Your inquiry has been sent successfully! [cite: 15]");
+        alert("Your inquiry has been sent successfully!");
       });
     </script>
   </body>
