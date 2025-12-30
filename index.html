@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Agency Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <nav class="fixed w-full z-50 bg-white shadow-sm">
+      <div
+        class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center"
+      >
+        <div class="text-2xl flex gap-2 font-bold text-blue-600">
+          <img class="w-10 h-10" src="./images/image.png" alt="" />TravelEase
+        </div>
+        <ul class="hidden md:flex space-x-8 font-medium">
+          <li><a href="#home" class="hover:text-blue-600">Home</a></li>
+          <li><a href="#packages" class="hover:text-blue-600">Packages</a></li>
+          <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header
+      id="home"
+      class="relative h-[80vh] flex items-center justify-center text-white"
+    >
+      <img
+        src="https://images.unsplash.com/photo-1469474968028-56623f02e42e"
+        class="absolute inset-0 w-full h-full object-cover"
+        alt="Travel"
+      />
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="relative z-10 text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">
+          Explore the World With Us
+        </h1>
+        <p class="text-lg md:text-xl mb-8">
+          Premium travel packages for families, couples, and solo travelers.
+        </p>
+        <a
+          href="#packages"
+          class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full font-semibold transition"
+          >Explore Tours</a
+        >
+      </div>
+    </header>
+
+    <section id="packages" class="max-w-7xl mx-auto px-4 py-20">
+      <h2 class="text-3xl font-bold text-center mb-12">
+        Featured Tour Packages
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+          <img
+            src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7"
+            class="h-48 w-full object-cover group-hover:scale-105 transition duration-300"
+            alt="Cox's Bazar"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Cox's Bazar Tour</h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Experience the world's longest natural sandy beach.
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-blue-600 font-bold">3 Days </span>
+              <button
+                onclick="openModal('Cox\'s Bazar', 'Enjoy the serene beauty of the Bay of Bengal with 3 days of relaxation.', '3 Days ', '5000 tk')"
+                class="text-sm border border-blue-600 text-blue-600 px-4 py-2 rounded hover:bg-blue-600 hover:text-white"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+          <img
+            src="https://images.unsplash.com/photo-1512453979798-5eaad0ff3b07"
+            class="h-48 w-full object-cover group-hover:scale-105 transition duration-300"
+            alt="Dubai"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Dubai Luxury Package</h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Explore the city of gold and modern wonders.
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-blue-600 font-bold">5 Days </span>
+              <button
+                onclick="openModal('Dubai Luxury', 'Stay in 5-star hotels and explore the Burj Khalifa and Desert Safari.', '5 Days ', 'Premium Package : 400,000 tk')"
+                class="text-sm border border-blue-600 text-blue-600 px-4 py-2 rounded hover:bg-blue-600 hover:text-white"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+          <img
+            src="https://images.unsplash.com/photo-1528181304800-2f140819ad1c"
+            class="h-48 w-full object-cover group-hover:scale-105 transition duration-300"
+            alt="Thailand"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Thailand Budget Tour</h3>
+            <p class="text-gray-600 text-sm mb-4">
+              Discover beautiful islands and vibrant street life.
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-blue-600 font-bold">4 Days </span>
+              <button
+                onclick="openModal('Thailand Budget', 'A 4-day trip covering Bangkok and Pattaya with local tours.', '4 Days [cite: 57]', 'Budget [cite: 57]')"
+                class="text-sm border border-blue-600 text-blue-600 px-4 py-2 rounded hover:bg-blue-600 hover:text-white"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="bg-gray-100 py-20 px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Contact Us & Inquiry
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Agency Details</h3>
+            <p class="mb-2">
+              <strong>Address:</strong> 123 Travel Street, City Center
+            </p>
+            <p class="mb-2"><strong>Phone:</strong> +880 1234 567890</p>
+            <p class="mb-6"><strong>Email:</strong> info@travelease.com</p>
+            <p class="text-gray-600 text-sm">
+              Targeting Families, Corporate, and Solo travelers .
+            </p>
+          </div>
+          <form id="inquiryForm" class="space-y-4">
+            <input
+              type="text"
+              placeholder="Your Name"
+              class="w-full p-3 rounded border focus:outline-blue-500"
+              required
+            />
+            <input
+              type="email"
+              placeholder="Email Address"
+              class="w-full p-3 rounded border focus:outline-blue-500"
+              required
+            />
+            <textarea
+              placeholder="Tell us about your trip inquiry..."
+              class="w-full p-3 rounded border h-32 focus:outline-blue-500"
+              required
+            ></textarea>
+            <button
+              class="w-full bg-blue-600 text-white py-3 rounded font-bold hover:bg-blue-700 transition"
+            >
+              Send Inquiry
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-10 text-center">
+      <div class="max-w-7xl mx-auto px-4">
+        <p class="mb-4">© 2025 TravelEase Agency.</p>
+        <div class="flex justify-center space-x-6 text-gray-400">
+          <a>Facebook</a>
+          <a>Instagram</a>
+          <a>Twitter</a>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      id="modal"
+      class="fixed inset-0 bg-black/60 hidden z-[100] flex items-center justify-center p-4"
+    >
+      <div class="bg-white rounded-2xl max-w-md w-full p-8 relative">
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-2xl">
+          &times;
+        </button>
+        <h2 id="modalTitle" class="text-2xl font-bold mb-4"></h2>
+        <p id="modalBody" class="text-gray-600 mb-6"></p>
+        <div class="flex justify-between border-t pt-4">
+          <span id="modalDuration" class="font-bold"></span>
+          <span id="modalPrice" class="text-blue-600 font-bold"></span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Modal Logic [cite: 24]
+      function openModal(title, body, duration, price) {
+        document.getElementById("modalTitle").innerText = title;
+        document.getElementById("modalBody").innerText = body;
+        document.getElementById("modalDuration").innerText = duration;
+        document.getElementById("modalPrice").innerText = price;
+        document.getElementById("modal").classList.remove("hidden");
+      }
+
+      function closeModal() {
+        document.getElementById("modal").classList.add("hidden");
+      }
+
+      // Form Validation [cite: 38]
+      document.getElementById("inquiryForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("Your inquiry has been sent successfully! [cite: 15]");
+      });
+    </script>
+  </body>
+</html>
