@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travel Agency Website</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body class="bg-gray-50 text-gray-800">
     <nav class="fixed w-full z-50 bg-white shadow-sm">
@@ -112,7 +117,7 @@
               type="text"
               id="fromCity"
               placeholder="e.g. Dhaka"
-              class="w-full p-3 bg-gray-50 border rounded-xl outline-none"
+              class="w-full p-3 bg-gray-50 border border-gray-300 rounded-xl outline-none"
               required
             />
           </div>
@@ -122,7 +127,7 @@
               type="text"
               id="toCity"
               placeholder="e.g. Cox's Bazar"
-              class="w-full p-3 bg-gray-50 border rounded-xl outline-none"
+              class="w-full p-3 bg-gray-50 border border-gray-300 rounded-xl outline-none"
               required
             />
           </div>
@@ -131,7 +136,7 @@
             <input
               type="date"
               id="travelDate"
-              class="w-full p-3 bg-gray-50 border rounded-xl outline-none"
+              class="w-full p-3 bg-gray-50 border border-gray-300 rounded-xl outline-none"
               required
             />
           </div>
@@ -293,6 +298,158 @@
         </button>
       </div>
     </div>
+    <section class="mb-6">
+      <h2 class="text-3xl font-semibold text-center">
+        Some Moment With Our Valuable Client
+      </h2>
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto px-4 py-10"
+      >
+        <div class="bg-white border border-gray-300 shadow-lg group">
+          <img
+            src="https://images.pexels.com/photos/2672979/pexels-photo-2672979.jpeg?cs=srgb&dl=pexels-olly-2672979.jpg&fm=jpg"
+            class="h-60 w-full object-cover"
+            alt="Cox's Bazar"
+          />
+          <div class="flex justify-between items-center">
+            <div class="p-5">
+              <h3 class="text-xl font-bold mb-2">Cox's Bazar Tour</h3>
+              <p class="text-sm text-gray-600">1 February, 2025</p>
+
+              <p class="text-gray-600 text-xl mb-4">⭐⭐⭐⭐⭐</p>
+            </div>
+            <div>
+              <button
+                class="btn hover:bg-blue-700 hover:text-white m-5 border border-blue-600 p-2 rounded-sm text-blue-600 font-semibold flex items-center gap-2"
+              >
+                Visit<span>➡️</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white border border-gray-300 shadow-lg group">
+          <img
+            src="https://img.freepik.com/free-photo/young-friends-smiling-rejoicing-looking-into-distance-standing-field_176420-4251.jpg?semt=ais_hybrid&w=740&q=80"
+            class="h-60 w-full object-cover"
+            alt="Cox's Bazar"
+          />
+          <div class="flex justify-between items-center">
+            <div class="p-5">
+              <h3 class="text-xl font-bold mb-2">Cox's Bazar Tour</h3>
+              <p class="text-sm text-gray-600">1 February, 2025</p>
+
+              <p class="text-gray-600 text-xl mb-4">⭐⭐⭐⭐⭐</p>
+            </div>
+            <div>
+              <button
+                class="btn hover:bg-blue-700 hover:text-white m-5 border border-blue-600 p-2 rounded-sm text-blue-600 font-semibold flex items-center gap-2"
+              >
+                Visit<span>➡️</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white border border-gray-300 shadow-lg group">
+          <img
+            src="https://st.depositphotos.com/1017986/5054/i/450/depositphotos_50547177-stock-photo-group-of-smiling-friends-traveling.jpg"
+            class="h-60 w-full object-cover"
+            alt="Cox's Bazar"
+          />
+          <div class="flex justify-between items-center">
+            <div class="p-5">
+              <h3 class="text-xl font-bold mb-2">Dybai Tour</h3>
+              <p class="text-sm text-gray-600">5 March, 2025</p>
+
+              <p class="text-gray-600 text-xl mb-4">⭐⭐⭐⭐⭐</p>
+            </div>
+            <div>
+              <button
+                class="btn hover:bg-blue-700 hover:text-white m-5 border border-blue-600 p-2 rounded-sm text-blue-600 font-semibold flex items-center gap-2"
+              >
+                Visit<span>➡️</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- add chatbox -->
+    <div id="chat-widget" class="fixed bottom-6 right-6 z-[120]">
+      <button
+        onclick="toggleChat()"
+        class="bg-black text-white p-4 rounded-full shadow-2xl hover:bg-blue-700 transition flex items-center justify-center"
+      >
+        <span class="text-white" id="chat-icon">?</span>
+        <span id="close-chat-icon" class="hidden text-xl">&times;</span>
+      </button>
+
+      <div
+        id="chat-window"
+        class="hidden absolute bottom-16 right-0 w-[320px] md:w-[380px] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100"
+      >
+        <div
+          class="bg-blue-600 p-4 text-white flex justify-between items-center"
+        >
+          <div>
+            <h3 class="font-bold">TravelEase Support</h3>
+            <p class="text-xs text-blue-100">Management is online</p>
+          </div>
+        </div>
+
+        <div
+          id="chat-messages"
+          class="h-80 overflow-y-auto p-4 space-y-4 bg-gray-50 text-sm"
+        >
+          <div class="flex flex-col">
+            <span
+              class="bg-white border text-gray-700 p-3 rounded-2xl rounded-tl-none shadow-sm max-w-[80%]"
+            >
+              Hello! How can our management team help you with your travel plans
+              today?
+            </span>
+            <span class="text-[10px] text-gray-400 mt-1 ml-1">10:00 AM</span>
+          </div>
+        </div>
+
+        <form id="chat-form" class="p-4 bg-white border-t flex gap-2">
+          <input
+            type="text"
+            id="chat-input"
+            placeholder="Type your message..."
+            class="flex-1 p-2 bg-gray-100 border-none rounded-lg outline-none text-sm focus:ring-2 focus:ring-blue-500"
+            required
+          />
+          <button
+            type="submit"
+            class="text-blue-600 font-bold px-2 hover:scale-110 transition"
+          >
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
+    <section class="py-10">
+      <h2 class="text-3xl font-bold text-center mb-12">
+        Why Choose TravelEase?
+      </h2>
+      <div
+        class="flex flex-col md:flex-row gap-8 justify-between items-center max-w-7xl mx-auto px-4 mb-8"
+      >
+        <img
+          class="rounded-xl md:w-1/2"
+          src="https://media.istockphoto.com/id/1850391734/photo/group-of-middle-aged-friends-posing-for-the-camera-happily-celebrating-their-holidays.jpg?s=612x612&w=0&k=20&c=2mazVAYSz39fURp55A4LjsOOPidV2vVLt2ycu0sueb0="
+          alt="Happy Group"
+        />
+        <ul
+          class="md:w-1/2 text-xl space-y-4 text-gray-600 list-disc list-inside"
+        >
+          <li>Customized travel packages to suit your needs.</li>
+          <li>Competitive pricing with no hidden costs.</li>
+          <li>24/7 customer support during your trip.</li>
+          <li>Expert consultants for personalized service.</li>
+        </ul>
+      </div>
+    </section>
 
     <section id="contact" class="bg-gray-100 py-20 px-4">
       <div class="max-w-4xl mx-auto text-center md:text-left">
@@ -429,6 +586,67 @@
         e.preventDefault();
         alert("Your inquiry has been sent successfully!");
       });
+
+      // Chatbox
+      // Toggle Chat Window Visibility
+      function toggleChat() {
+        const window = document.getElementById("chat-window");
+        const chatIcon = document.getElementById("chat-icon");
+        const closeIcon = document.getElementById("close-chat-icon");
+
+        const isHidden = window.classList.contains("hidden");
+
+        if (isHidden) {
+          window.classList.remove("hidden");
+          chatIcon.classList.add("hidden");
+          closeIcon.classList.remove("hidden");
+        } else {
+          window.classList.add("hidden");
+          chatIcon.classList.remove("hidden");
+          closeIcon.classList.add("hidden");
+        }
+      }
+
+      // Handle Sending Messages
+      document
+        .getElementById("chat-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const input = document.getElementById("chat-input");
+          const messageArea = document.getElementById("chat-messages");
+
+          if (input.value.trim() !== "") {
+            // Create Customer Message Bubble
+            const msgDiv = document.createElement("div");
+            msgDiv.className = "flex flex-col items-end";
+            msgDiv.innerHTML = `
+      <span class="bg-blue-600 text-white p-3 rounded-2xl rounded-tr-none shadow-sm max-w-[80%]">
+        ${input.value}
+      </span>
+      <span class="text-[10px] text-gray-400 mt-1 mr-1">Just now</span>
+    `;
+
+            messageArea.appendChild(msgDiv);
+            input.value = "";
+
+            // Auto-scroll to bottom
+            messageArea.scrollTop = messageArea.scrollHeight;
+
+            // Simulate Management Response
+            setTimeout(() => {
+              const replyDiv = document.createElement("div");
+              replyDiv.className = "flex flex-col";
+              replyDiv.innerHTML = `
+        <span class="bg-white border text-gray-700 p-3 rounded-2xl rounded-tl-none shadow-sm max-w-[80%]">
+          Thank you for reaching out! A member of our management team will review your message and reply shortly.
+        </span>
+        <span class="text-[10px] text-gray-400 mt-1 ml-1">Support Team</span>
+      `;
+              messageArea.appendChild(replyDiv);
+              messageArea.scrollTop = messageArea.scrollHeight;
+            }, 1500);
+          }
+        });
     </script>
   </body>
 </html>
